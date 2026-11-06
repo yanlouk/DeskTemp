@@ -6,6 +6,14 @@
 
 ![DeskTemp 桌面小部件截图：CPU/GPU 温度、负载、频率/功耗、显存与内存占用](screenshot-current.png)
 
+## Code signing policy / 代码签名政策
+
+本项目使用 [MIT License](LICENSE) 开源，代码在 <https://github.com/yanlouk/DeskTemp>。
+
+**Free code signing provided by [SignPath.io](https://signpath.io/), certificate by [SignPath Foundation](https://signpath.org/).**
+
+Windows 发布包正在申请 SignPath Foundation 的免费开源代码签名；当前 `v1.0.0` 尚未签名。完整签名政策、团队角色和构建来源见 [CODE_SIGNING_POLICY.md](CODE_SIGNING_POLICY.md)；隐私说明见 [PRIVACY.md](PRIVACY.md)。
+
 悬停 CPU 卡片左侧：
 
 ![悬停 CPU 卡片左侧时显示水泵和风扇转速](hover-cpu.png)

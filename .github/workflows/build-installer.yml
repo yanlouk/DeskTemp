@@ -1,0 +1,59 @@
+name: Build Windows installer
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build self-contained installer
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Publish self-contained app
+        shell: pwsh
+        run: |
+          dotnet publish .\DeskTemp.csproj `
+            -c Release `
+            -r win-x64 `
+            --self-contained true `
+            -o .\dist\app
+
+      - name: Download Inno Setup
+        shell: pwsh
+        run: |
+          $url = "https://api.nuget.org/v3-flatcontainer/tools.innosetup/7.1.0/tools.innosetup.7.1.0.nupkg"
+          Invoke-WebRequest -Uri $url -OutFile .\innosetup.nupkg
+          Copy-Item .\innosetup.nupkg .\innosetup.zip
+          Expand-Archive .\innosetup.zip -DestinationPath .\innosetup -Force
+
+      - name: Build installer
+        shell: pwsh
+        run: |
+          & .\innosetup\tools\ISCC.exe .\installer\DeskTemp.iss
+          Get-FileHash .\dist\DeskTempSetup-1.0.0.exe -Algorithm SHA256 |
+            ForEach-Object { "$($_.Hash)  DeskTempSetup-1.0.0.exe" } |
+            Set-Content .\dist\SHA256.txt -Encoding ASCII
+          Get-Content .\dist\SHA256.txt
+
+      - name: Upload unsigned installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: DeskTempSetup-unsigned
+          path: |
+            dist/DeskTempSetup-1.0.0.exe
+            dist/SHA256.txt
+          if-no-files-found: error
