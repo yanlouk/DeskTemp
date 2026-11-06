@@ -4,8 +4,6 @@
 
 一个常驻桌面右上角的 Windows 小部件，实时显示 CPU 与显卡的温度、负载、频率/功耗和显存占用。
 
-![DeskTemp 桌面小部件截图：CPU/GPU 温度、负载、频率/功耗、显存与内存占用](screenshot-current.png)
-
 悬停 CPU 卡片左侧：
 
 ![悬停 CPU 卡片左侧时显示水泵和风扇转速](hover-cpu.png)
