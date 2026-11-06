@@ -1,0 +1,22 @@
+bin/
+obj/
+dist/
+tools/
+.vs/
+
+# Local design/test artifacts
+capacity-*.png
+installed-capacity*.png
+final-default*.png
+readme-html.png
+storage-gap-*.png
+storage-parens-*.png
+storage-size-*.png
+storage-mockup.png
+memory-mockup.png
+memory-demo.png
+ring-buffer-diagram.png
+fan-mockup*.png
+
+*.user
+*.suo

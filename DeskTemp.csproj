@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>DeskTemp</AssemblyName>
+    <RootNamespace>DeskTemp</RootNamespace>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <PlatformTarget>x64</PlatformTarget>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <NoWarn>$(NoWarn);WFAC010;NU1605;WFO0003</NoWarn>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Product>DeskTemp</Product>
+    <Company>Vaidurya</Company>
+    <Copyright>Copyright © 2026 Vaidurya</Copyright>
+    <AssemblyTitle>DeskTemp 桌面温度监控</AssemblyTitle>
+    <Description>实时监控 CPU 与显卡温度的桌面小部件</Description>
+    <SatelliteResourceLanguages>zh-Hans;en</SatelliteResourceLanguages>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.4" />
+    <PackageReference Include="System.Management" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+</Project>

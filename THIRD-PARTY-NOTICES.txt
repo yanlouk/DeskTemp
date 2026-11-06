@@ -1,0 +1,48 @@
+DeskTemp 1.0.0
+Third-party notices
+====================
+
+DeskTemp bundles the following third-party components. Their licenses apply to
+those components; DeskTemp's own source remains under its author's terms.
+
+1. LibreHardwareMonitorLib 0.9.4
+   Copyright (c) LibreHardwareMonitor contributors.
+   License: Mozilla Public License 2.0 (MPL-2.0).
+   Project: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor
+   License text: https://www.mozilla.org/en-US/MPL/2.0/
+
+   The MPL-2.0 is a file-level copyleft license. This application uses the
+   unmodified LibreHardwareMonitorLib binary. The corresponding source code is
+   available at the project URL above.
+
+2. HidSharp 2.1.0
+   Copyright 2010-2025 James F. Bellinger.
+   License: Apache License 2.0.
+   Project: http://www.zer7.com/software/hidsharp
+   License text: https://www.apache.org/licenses/LICENSE-2.0
+
+3. Mono.Posix.NETStandard 1.0.0
+   Copyright (c) Microsoft Corporation.
+   License: MIT.
+   Project: https://github.com/mono/mono
+   License text: https://opensource.org/licenses/MIT
+
+4. System.Management 10.0.0
+   System.IO.Ports 9.0.0
+   System.CodeDom 6.0.0
+   Copyright (c) .NET Foundation and Contributors.
+   License: MIT.
+   Project: https://github.com/dotnet/runtime
+   License text: https://opensource.org/licenses/MIT
+
+5. .NET 10 Desktop Runtime (bundled in the self-contained build)
+   Copyright (c) .NET Foundation and Contributors.
+   License: MIT.
+   Project: https://github.com/dotnet/runtime
+   License text: https://opensource.org/licenses/MIT
+
+Notes
+-----
+- No warranty is provided by the third-party authors.
+- The licenses above are reproduced by reference to their canonical texts;
+  keep this file with the installed application when redistributing it.
